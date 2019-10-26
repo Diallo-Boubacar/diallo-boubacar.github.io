@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boubacar Diallo's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <!-- FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Image Modal -->
+    <div class="modal-box" id="modal-box" >
+        <div class="modal-box__toggle">
+            <div class="modal-box__toggle--background">
+                <i class="modal-box__toggle--icon fas fa-times" id="modal-toggle" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="modal-box__content">
+            <img src="media/gallery-4.jpeg" class="modal-box__img" id="modal-img">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <!-- Nav Button -->
+        <div class="navigation__button">
+            &nbsp;
+        </div>
+
+        <nav class="navigation__background">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="#home" class="navigation__link scroll">Home</a>
+                </li>
+
+                <li class="navigation__item">
+                    <a href="#about" class="navigation__link scroll">About Me</a>
+                </li>
+
+                <li class="navigation__item">
+                    <a href="#feature" class="navigation__link scroll">What I Do</a>
+                </li>
+
+                <li class="navigation__item">
+                    <a href="#gallery" class="navigation__link scroll">Gallery</a>
+                </li>
+
+                <li class="navigation__item">
+                    <a href="#contact" class="navigation__link scroll">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Navigation Toggle -->
+        <div class="navigation__toggle">
+            <i class="fas fa-bars navigation__toggle--icon" aria-hidden="true"></i>
+        </div>
+    </div>
+
+
+
+    <!-- Header -->
+    <header class="header" id="home">
+        <div class="header__text-box">
+            <h1 class="primary-heading">
+                <span class="primary-heading--sub" id="greeting"></span>
+                <span class="primary-heading--main">Boubacar Diallo</span>
+            </h1>    
+
+            <div class="margin-top-medium">
+                <a href="#about" class="btn btn--main scroll">About Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div>
+            <h2 class="secondary-heading">
+                About Me
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                <div class="about-section__img-box">
+                    <img src="media/boubacar2.jpeg" class="about-section__img">
+                </div>
+            </div>
+
+            <div class="col-2-of-3">
+                <div class="about-section__text-box">
+                    <p class="about-section__text-box-text">
+                        My name is Boubacar Diallo. I am from Guinea Conakry West Africa. Guinea is a French
+                        Colony and French is the official language. It is officially the Republic of Guinea
+                        formerly known as French Guinea. 
+                        I was born and raised in this country. I have received my college diplomas in June 2008 at the
+                        University of Sonfonia Conakry and moved to this country in July 2008 in order to pursue my
+                        education here.
+                    </p>
+    
+                    <p class="about-section__text-box-text">
+                        I had first lived in Indianapolis for a year and half. During that time I started my first college
+                        courses at IVY TECH. I then transferred to BMCC in NYC where I recently received my associates
+                        degree. I am currently transferring to Lehman College for my bachelor’s degree.
+                        I speak Poular, Creol (G. Bissau) French, and English.
+                    </p>
+
+                    <p class="about-section__text-box-text">
+                        Feel free to contact me below!
+                    </p>
+
+                    <div class="margin-top-medium">
+                        <a href="#gallery" class="btn btn--about scroll">View Gallery</a>
+                        <a href="#contact" class="btn btn--about scroll">Get in Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-box">
+
+            <div class="quote-box__quotation">
+                <i class="fas fa-quote-left quote-box__quotation--left"></i>
+            </div>
+
+            <div class="quote-box__quotation">
+                <i class="fas fa-quote-right quote-box__quotation--right"></i>
+            </div>
+
+            <p class="quote-box__quote">
+                Have the courage to follow your heart and intuition. They somehow know what you truly want to become.
+            </p>
+            <p class="quote-box__citation">
+                - Steve Jobs
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature Section -->
+    <section class="feature-section" id="feature">
+        <div class="">
+            <h2 class="secondary-heading">
+                Here's what I do
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                <div class="feature-box">
+                    <div class="feature-box__icon">
+                        <i class="fas fa-futbol feature-box__icon--1"></i>
+                    </div>
+                    <h2 class="feature-box__heading">Hobbies/Sports</h2>
+                    <p class="feature-box__text">
+                        My favorite sport is soccer. My friends usually organize a BBQ at the beach and we end up
+                        playing soccer and dancing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-3">
+                <div class="feature-box">
+                    <div class="feature-box__icon">
+                        <i class="fas fa-business-time feature-box__icon--1"></i>
+                    </div>
+                    <h2 class="feature-box__heading">Business</h2>
+                    <p class="feature-box__text">
+                        I work for a company called FISERV. I'm about to open my own
+                        African Restaurant in a few months located in New York City.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-3">
+                <div class="feature-box">
+                    <div class="feature-box__icon">
+                        <i class="fas fa-plane-departure feature-box__icon--1"></i>
+                    </div>
+                    <h2 class="feature-box__heading">Traveling</h2>
+                    <p class="feature-box__text">
+                        I enjoy traveling to a lot of new places from time to time. The one thing I don't enjoy and hate is flight turbulences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div>
+            <h2 class="secondary-heading">
+                Photo Gallery
+            </h2>
+        </div>
+
+        <!-- First Row -->
+        <div class="gallery__photo-container">
+            <img src="media/gallery-1.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-2.jpg" class="gallery__photo-container--img gallery__photo-container--img-position">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-3.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-4.jpeg" class="gallery__photo-container--img">
+        </div>
+
+        <!-- Second Row -->
+        <div class="gallery__photo-container">
+            <img src="media/gallery-5.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-6.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-7.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-8.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <!-- Third Row -->
+        <div class="gallery__photo-container">
+            <img src="media/gallery-9.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-10.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-11.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="gallery__photo-container">
+            <img src="media/gallery-12.jpg" class="gallery__photo-container--img">
+        </div>
+
+        <div class="clear"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="row">
+            <div class="contact-box">
+                <div>
+                    <h2 class="secondary-heading">
+                        Let's Get Connected!
+                    </h2>
+                </div>
+                                
+                <p class="contact-box__text">
+                    Follow me on any of the social media links below and send me a message!
+                </p>
+
+                <div class="contact-box__social-media">
+                    <ul class="contact-box__list">
+                        <a href="https://www.facebook.com/boubacar.diallo.3760" target="_blank" class="contact-box__link">
+                            <li class="contact-box__item">
+                                <i class="fab fa-facebook-f"></i>
+                            </li>
+                        </a>
+
+                        <a href="https://www.snapchat.com/add/jallowt" target="_blank" class="contact-box__link">
+                            <li class="contact-box__item">
+                                <i class="fab fa-snapchat-ghost"></i>
+                            </li>
+                        </a>
+
+                        <a href="https://www.instagram.com/teliwelboubacar/" target="_blank" class="contact-box__link">
+                            <li class="contact-box__item">
+                                <i class="fab fa-instagram"></i>
+                            </li>
+                        </a>
+
+                        <a href="mailto:boubacarpdiallo34@gmail.com" class="contact-box__link">
+                            <li class="contact-box__item">
+                                <i class="fas fa-envelope"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__text">
+            &copy; 2019 Designed & Developed by Jose Torralba
+        </p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

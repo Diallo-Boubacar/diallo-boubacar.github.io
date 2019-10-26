@@ -1,0 +1,57 @@
+.contact-box {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+    padding: 5rem 0;
+    text-align: center;
+
+    &__text {
+        font-size: 2rem;
+        font-weight: 900;
+        padding-bottom: 3rem;
+
+        @include respond(tablet-portrait) {
+            padding: 0 4rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__social-media {
+        display: inline-block;
+    }
+
+    &__list {
+        list-style: none;
+        @include respond(tablet-portrait) { padding: 0 12rem; }
+        @include respond(phone) { padding: 0 9rem; }
+        @include respond(smaller-phone) { padding: 0 4rem; }
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+
+    &__item {
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+        display: inline-block;
+        font-size: 4rem;
+        background: $primary-color;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;    
+        line-height: 80px;
+        transition: all .3s;
+        @include respond(tablet-portrait) { margin-bottom: 2rem; }
+
+        &:hover {
+            color: #000;
+            transform: translateY(-.3rem);
+        }
+    }
+}
+

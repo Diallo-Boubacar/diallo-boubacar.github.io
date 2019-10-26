@@ -1,0 +1,31 @@
+// Feature Box
+.feature-box {
+    background-color: rgba(#fff, .9);
+    border-radius: 4px;
+    color: #000;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+    margin-top: 3rem;
+    padding: 4rem 3rem;
+    text-align: center;
+    transition: all .3s;
+
+    &:hover {
+        transform: translateY(-.4rem);
+    }
+
+    &__icon {
+        font-size: 8rem;
+        text-shadow: 0px 3px 10px rgb(170, 170, 170);
+    }
+
+    &__heading {
+        font-size: 2.6rem;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+
+        font-size: 1.7rem;
+        text-align: left;
+    }
+}
