@@ -31,8 +31,8 @@ section {
 .quote-section {
     padding: 8rem 0;
     background-image: linear-gradient(
-        rgba($primary-color, .3),
-        rgba($primary-color, .3)),
+        rgba($primary-color, .5),
+        rgba($primary-color, .5)),
         url(../media/mountains.jpg);
 
     background-position: top;
@@ -52,7 +52,6 @@ section {
         & > * {
             transform: skewY(0);
         }
-
     }
 }
 
@@ -67,11 +66,6 @@ section {
         margin-top: 0;
         padding-top: 6rem;
     }
-}
-
-.gallery-section {
-    // background-color: $primary-color;
-    // padding-top: 3rem;
 }
 
 .contact-section {

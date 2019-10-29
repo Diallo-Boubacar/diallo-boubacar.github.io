@@ -34,8 +34,6 @@
             right: 4.8rem;
         }
 
-
-
         &--icon {
             cursor: pointer;
             color: #fff;
@@ -50,7 +48,6 @@
             @include respond(phone) {
                 font-size: 3.2rem;
             }
-    
         }
     }
 

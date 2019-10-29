@@ -50,69 +50,79 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     });
 
+    // Gallery
+    function displayGallery() {
+        var getGallery = document.querySelector('.gallery')
+        var galleryImages = [
+            "media/gallery-1.jpg",
+            "media/gallery-2.jpg",
+            "media/gallery-3.jpg",
+            "media/gallery-4.jpg",
+            "media/gallery-5.jpg",
+            "media/gallery-6.jpg",
+            "media/gallery-7.jpg",
+            "media/gallery-8.jpg",
+            "media/gallery-9.jpg",
+            "media/gallery-10.jpg",
+            "media/gallery-11.jpg",
+            "media/gallery-12.jpg"
+        ];
+
+        for (var i = 0; i < galleryImages.length; i++) {
+            var createImageContainer = document.createElement('div');
+            createImageContainer.classList.add('gallery__image-container');
+            createImageContainer.dataset.src = galleryImages[i];
+            createImageContainer.style.backgroundImage = `url('${galleryImages[i]}')`;
+            getGallery.appendChild(createImageContainer)
+        };
+    }
+    displayGallery();
 
     // Displays Image on Gallery when Clicked on
     var getModalBox = document.getElementById("modal-box");
     var modalImg = document.getElementById("modal-img")
-    const getGalleryImage = document.querySelectorAll('.gallery__photo-container');
+    const getGalleryImage = document.querySelectorAll('.gallery__image-container');
     const getModalToggle = document.getElementById('modal-toggle');
 
     getGalleryImage.forEach(function (getGalleryImage) {
         getGalleryImage.addEventListener('click', imageClicked)
     });
 
-    // Gets Current href and Inserts onto Image Modal Box
+    // Gets Current src and Inserts onto Image Modal Box
     function imageClicked(event) {
         getModalBox.style.display = "block";
-        modalImg.src = event.target.src;
-    }
+        modalImg.src = event.target.dataset.src;
+    };
 
     // Removes Image Modal Box
     getModalToggle.addEventListener('click', function() {
         getModalBox.style.display = "none";
-    })
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == getModalBox) {
-        getModalBox.style.display = "none";
-        }
-    }
-
+    });
 
     // Get's Current Time to Show Appropriate Greeting
     var greeting = document.querySelector('.primary-heading--sub');
-
     function getCurrentTime() {
         var currentTime = new Date();
         var currentHour = currentTime.getHours();
 
         if (currentHour < 12) {
-            // Morning
             greeting.textContent = 'Good Morning, I\'m';
-            // document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
 
         } else if (currentHour < 18) {
-            // Afternoon
             greeting.textContent = 'Good Afternoon, I\'m';
 
         } else {
-            // Evening
             greeting.textContent = 'Good Evening, I\'m';
-        }
-    }
+        };
+    };
     getCurrentTime();
 
 
     // jQueryScroll animation
     $("a.scroll").click(function (event) {
         event.preventDefault();
-
         $("html, body").animate({
             scrollTop: $($(this).attr("href")).offset().top
         }, 1000);
     });
-
 });
-
-

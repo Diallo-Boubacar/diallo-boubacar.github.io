@@ -18,9 +18,5 @@
         text-align: center;
         width: 100%;
     }
-
-
-    @include respond(tablet-portrait) {
-        background-attachment: scroll;
-    }
+    @include respond(tablet-portrait) { background-attachment: scroll; }
 }

@@ -97,9 +97,6 @@ body {
 .margin-bottom-medium {
   margin-bottom: 4rem; }
 
-.clear {
-  clear: both; }
-
 .footer {
   background-color: #000;
   padding: 6rem 0; }
@@ -155,61 +152,33 @@ body {
   .btn--about:not(:last-child) {
     margin-right: 1rem; }
 
-.gallery::after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.gallery__photo-container {
+.gallery {
   background-color: #000;
-  display: block;
-  float: left;
-  height: 40vh;
-  overflow: hidden;
-  position: relative;
-  width: 25%; }
-  @media only screen and (max-width: 75em) {
-    .gallery__photo-container {
-      height: 30vh; } }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); }
   @media only screen and (max-width: 56.25em) {
-    .gallery__photo-container {
-      height: 25vh; } }
+    .gallery {
+      grid-template-columns: repeat(3, 1fr); } }
   @media only screen and (max-width: 37.5em) {
-    .gallery__photo-container {
-      height: 20vh; } }
-  @media only screen and (max-width: 25.875em) {
-    .gallery__photo-container {
-      width: 50%; } }
-  .gallery__photo-container--img {
-    position: absolute;
-    top: 0;
-    left: -5rem;
-    right: 0;
-    bottom: 0;
-    margin: 0 auto;
-    width: 50rem;
-    opacity: 0.7;
-    transform: scale(1.1);
-    transition: transform 0.5s, opacity 0.5s; }
-    @media only screen and (max-width: 56.25em) {
-      .gallery__photo-container--img {
-        width: 40rem; } }
-    @media only screen and (max-width: 37.5em) {
-      .gallery__photo-container--img {
-        width: 30rem; } }
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); } }
+  .gallery__image-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 40vh;
+    opacity: .7;
+    transition: all .3s; }
     @media only screen and (max-width: 25.875em) {
-      .gallery__photo-container--img {
-        width: 28rem; } }
-    .gallery__photo-container--img:hover {
+      .gallery__image-container {
+        height: 30vh; } }
+    @media only screen and (max-width: 20em) {
+      .gallery__image-container {
+        height: 25vh; } }
+    .gallery__image-container:hover {
       cursor: pointer;
-      opacity: 1;
-      transform: scale(1.03); }
-    .gallery__photo-container--img-position {
-      top: -15rem;
-      left: -5rem; }
-      @media only screen and (max-width: 25.875em) {
-        .gallery__photo-container--img-position {
-          top: -8rem; } }
+      opacity: 1; }
 
 .modal-box {
   animation-name: zoom;
@@ -258,9 +227,17 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    width: 100%    !important;
+    height: auto   !important; }
   .modal-box__img {
-    width: 100%; }
+    margin: 0 auto;
+    width: 50% !important;
+    height: auto !important;
+    display: block; }
+    @media only screen and (max-width: 56.25em) {
+      .modal-box__img {
+        width: 100% !important; } }
 
 .quote-box {
   position: relative;
@@ -334,23 +311,23 @@ body {
         padding: 0 4rem;
         margin-bottom: 4rem; } }
   .contact-box__social-media {
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 2rem; }
   .contact-box__list {
     list-style: none; }
-    @media only screen and (max-width: 56.25em) {
-      .contact-box__list {
-        padding: 0 12rem; } }
-    @media only screen and (max-width: 37.5em) {
-      .contact-box__list {
-        padding: 0 9rem; } }
     @media only screen and (max-width: 25.875em) {
       .contact-box__list {
-        padding: 0 4rem; } }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem; } }
   .contact-box__link {
     color: #fff;
     text-decoration: none; }
     .contact-box__link:not(:last-child) {
       margin-right: 3rem; }
+    @media only screen and (max-width: 25.875em) {
+      .contact-box__link:not(:last-child) {
+        margin-right: 0; } }
   .contact-box__item {
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
     display: inline-block;
@@ -365,7 +342,7 @@ body {
       .contact-box__item {
         margin-bottom: 2rem; } }
     .contact-box__item:hover {
-      color: #000;
+      text-shadow: 0px 5px 10px #4e4e4e;
       transform: translateY(-0.3rem); }
 
 .footer {
@@ -525,7 +502,7 @@ section {
 
 .quote-section {
   padding: 8rem 0;
-  background-image: linear-gradient(rgba(2, 212, 156, 0.3), rgba(2, 212, 156, 0.3)), url(../media/mountains.jpg);
+  background-image: linear-gradient(rgba(2, 212, 156, 0.5), rgba(2, 212, 156, 0.5)), url(../media/mountains.jpg);
   background-position: top;
   background-size: cover;
   margin-top: 6rem;
