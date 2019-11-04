@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var toggleItem = document.querySelectorAll('.navigation__item');
     var toggleClose = 'fas fa-times navigation__toggle--icon';
     var toggleOpen = 'fas fa-bars navigation__toggle--icon';
-    
+
     var navigation = {
         background: document.querySelector('.navigation__background'),
         icon: document.querySelector('.navigation__toggle--icon'),
@@ -99,11 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             getModalImg.src = event.target.dataset.src;
         });
 
-        window.onclick = function(event) {
-            if (event.target == getModalContainer || event.target == getModalImg || event.target == getModalToggle) {
-                fadeAnimation(getModalContainer, 'fadeOut', 'none', 300)
-            };
-        };
+        getModalToggle.addEventListener('click', () => fadeAnimation(getModalContainer, 'fadeOut', 'none', 300));
     }
 
     // Toggles Fade In & Out Animation
