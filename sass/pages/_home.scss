@@ -29,28 +29,31 @@ section {
 }
 
 .quote-section {
-    padding: 8rem 0;
     background-image: linear-gradient(
-        rgba($primary-color, .5),
-        rgba($primary-color, .5)),
-        url(../media/mountains.jpg);
+    to bottom,
+    rgba($primary-color, .5),
+    rgba($primary-color, .5)),
+    url(../media/mountains.jpg);
 
-    background-position: top;
+    background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
     margin-top: 6rem;
-    transform: skewY(-5deg);
+    padding: 8rem 0;
+    position: relative;
 
-    // section-features > direct child
-    & > * {
-        transform: skewY(5deg);
+    @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+        clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
     }
 
     @include respond(tablet-portrait) {
         background-attachment: scroll;
-        transform: skewY(0);
 
-        & > * {
-            transform: skewY(0);
+        @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+            -webkit-clip-path: none;
+            clip-path: none;
         }
     }
 }

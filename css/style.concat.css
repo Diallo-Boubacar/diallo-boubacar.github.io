@@ -1,8 +1,14 @@
-@keyframes zoom {
+@keyframes fadeIn {
   0% {
     opacity: 0; }
   50% {
     opacity: 1; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 *,
 *::after,
@@ -97,6 +103,23 @@ body {
 .margin-bottom-medium {
   margin-bottom: 4rem; }
 
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: .4s;
+  animation-timing-function: ease-in-out; }
+
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: .4s;
+  animation-timing-function: ease-in-out; }
+
+.displayNavBackground {
+  opacity: 1 !important;
+  z-index: 1500 !important; }
+
+.displayNavList {
+  left: 50% !important; }
+
 .footer {
   background-color: #000;
   padding: 6rem 0; }
@@ -180,16 +203,14 @@ body {
       cursor: pointer;
       opacity: 1; }
 
-.modal-box {
-  animation-name: zoom;
-  animation-duration: 1s;
+.modal-container {
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
   position: fixed;
   width: 100%;
   height: 100vh;
   z-index: 100000; }
-  .modal-box__toggle {
+  .modal-container__toggle {
     background-color: #02D49C;
     border-radius: 50rem;
     color: #fff;
@@ -200,28 +221,28 @@ body {
     height: 8rem;
     z-index: 15000; }
     @media only screen and (max-width: 37.5em) {
-      .modal-box__toggle {
+      .modal-container__toggle {
         width: 6rem;
         height: 6rem; } }
-    .modal-box__toggle--background {
+    .modal-container__toggle--background {
       position: fixed;
       top: 7rem;
       right: 5.8rem; }
       @media only screen and (max-width: 37.5em) {
-        .modal-box__toggle--background {
+        .modal-container__toggle--background {
           top: 6.5rem;
           right: 5rem; } }
-    .modal-box__toggle--icon {
+    .modal-container__toggle--icon {
       cursor: pointer;
       font-size: 3.8rem;
       text-shadow: 0px 3px 10px #0f0f0f;
       transition: all .3s; }
-      .modal-box__toggle--icon:hover {
+      .modal-container__toggle--icon:hover {
         transform: translateY(-0.2rem); }
       @media only screen and (max-width: 37.5em) {
-        .modal-box__toggle--icon {
+        .modal-container__toggle--icon {
           font-size: 3.2rem; } }
-  .modal-box__content {
+  .modal-container__content {
     margin: 0 auto;
     display: block;
     position: absolute;
@@ -230,20 +251,24 @@ body {
     transform: translate(-50%, -50%);
     width: 100%    !important;
     height: auto   !important; }
-  .modal-box__img {
+  .modal-container__img {
     margin: 0 auto;
     width: 50% !important;
     height: auto !important;
     display: block; }
     @media only screen and (max-width: 56.25em) {
-      .modal-box__img {
+      .modal-container__img {
         width: 100% !important; } }
 
 .quote-box {
-  position: relative;
-  padding: 4rem 2rem;
   color: #fff;
-  text-shadow: 0px 3px 10px black; }
+  text-shadow: 0px 3px 10px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%; }
   .quote-box__quotation {
     font-size: 4rem; }
     @media only screen and (max-width: 37.5em) {
@@ -251,7 +276,7 @@ body {
         font-size: 3rem; } }
     .quote-box__quotation--left {
       position: absolute;
-      top: 2rem;
+      top: -2rem;
       left: 15rem; }
       @media only screen and (max-width: 56.25em) {
         .quote-box__quotation--left {
@@ -261,7 +286,7 @@ body {
           left: 2rem; } }
     .quote-box__quotation--right {
       position: absolute;
-      top: 2rem;
+      top: -2rem;
       right: 15rem; }
       @media only screen and (max-width: 56.25em) {
         .quote-box__quotation--right {
@@ -501,20 +526,25 @@ section {
     margin-bottom: 2.6rem; }
 
 .quote-section {
-  padding: 8rem 0;
-  background-image: linear-gradient(rgba(2, 212, 156, 0.5), rgba(2, 212, 156, 0.5)), url(../media/mountains.jpg);
-  background-position: top;
+  background-image: linear-gradient(to bottom, rgba(2, 212, 156, 0.5), rgba(2, 212, 156, 0.5)), url(../media/mountains.jpg);
+  background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 45vh;
   margin-top: 6rem;
-  transform: skewY(-5deg); }
-  .quote-section > * {
-    transform: skewY(5deg); }
+  padding: 8rem 0;
+  position: relative; }
+  @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+    .quote-section {
+      -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+      clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); } }
   @media only screen and (max-width: 56.25em) {
     .quote-section {
-      background-attachment: scroll;
-      transform: skewY(0); }
-      .quote-section > * {
-        transform: skewY(0); } }
+      background-attachment: scroll; }
+      @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+        .quote-section {
+          -webkit-clip-path: none;
+          clip-path: none; } } }
 
 .feature-section {
   margin-top: -7rem;

@@ -17,7 +17,7 @@
     }
 
     &__toggle {
-
+        // text-align: center;
         position: fixed;
         top: 7rem;
         right: 5.4rem;
@@ -35,6 +35,7 @@
         }
 
         &--icon {
+
             cursor: pointer;
             color: #fff;
             font-size: 3.8rem;

@@ -3,33 +3,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navigation Object & Variables
     var toggleItem = document.querySelectorAll('.navigation__item');
+    var toggleClose = 'fas fa-times navigation__toggle--icon';
+    var toggleOpen = 'fas fa-bars navigation__toggle--icon';
+    
     var navigation = {
-        icon: document.querySelector('.navigation__toggle--icon'),
         background: document.querySelector('.navigation__background'),
+        icon: document.querySelector('.navigation__toggle--icon'),
         list: document.querySelector('.navigation__list')
     };
 
     // Toggles Navigation Icon
     function toggleNavigationIcon() {
-        navigation.icon.setAttribute("class", "fas fa-times navigation__toggle--icon");
-        navigation.icon.removeAttribute("fas fa-bars navigation__toggle--icon");
+        navigation.icon.setAttribute("class", toggleClose);
+        navigation.icon.removeAttribute(toggleOpen);
     }
 
     // Removes Navigation
     function removeNavigation() {
-        navigation.icon.setAttribute("class", "fas fa-bars navigation__toggle--icon");
-        navigation.icon.removeAttribute('fas fa-times navigation__toggle--icon');
-        navigation.background.style.opacity = '0';
-        navigation.background.style.zIndex = '-1000';
-        navigation.list.style.left = '-10rem';
+        navigation.icon.setAttribute("class", toggleOpen);
+        navigation.icon.removeAttribute(toggleClose);
+        navigation.background.classList.remove('displayNavBackground');
+        navigation.list.classList.remove('displayNavList')
     }
 
     // Toggle Navigation Background
     navigation.icon.addEventListener('click', function() {
+        
         if (navigation.icon.classList.contains('fa-bars')) {
-            navigation.background.style.opacity = '1';
-            navigation.background.style.zIndex = '1500';
-            navigation.list.style.left = '50%'
+
+            navigation.background.classList.add('displayNavBackground');
+            navigation.list.classList.add('displayNavList')
             toggleNavigationIcon();
 
         } else {
@@ -75,29 +78,43 @@ document.addEventListener('DOMContentLoaded', function() {
             createImageContainer.style.backgroundImage = `url('${galleryImages[i]}')`;
             getGallery.appendChild(createImageContainer)
         };
+
     }
     displayGallery();
 
+
     // Displays Image on Gallery when Clicked on
-    var getModalBox = document.getElementById("modal-box");
-    var modalImg = document.getElementById("modal-img")
-    const getGalleryImage = document.querySelectorAll('.gallery__image-container');
-    const getModalToggle = document.getElementById('modal-toggle');
+    var getModalToggle = document.querySelector('.modal-container__toggle--icon');
+    var getModalContainer = document.querySelector(".modal-container");
+    var getModalImg = document.querySelector(".modal-container__img")
+    var getGalleryImage = document.querySelectorAll('.gallery__image-container');
+    
+    getGalleryImage.forEach((getGalleryImage) => toggleModal(getGalleryImage)) 
 
-    getGalleryImage.forEach(function (getGalleryImage) {
-        getGalleryImage.addEventListener('click', imageClicked)
-    });
+    function toggleModal(imgTarget) {
 
-    // Gets Current src and Inserts onto Image Modal Box
-    function imageClicked(event) {
-        getModalBox.style.display = "block";
-        modalImg.src = event.target.dataset.src;
-    };
+        imgTarget.addEventListener('click', () => {
+            fadeAnimation(getModalContainer, 'fadeIn', 'block', 300)
+            getModalContainer.style.display = 'block';
+            getModalImg.src = event.target.dataset.src;
+        });
 
-    // Removes Image Modal Box
-    getModalToggle.addEventListener('click', function() {
-        getModalBox.style.display = "none";
-    });
+        window.onclick = function(event) {
+            if (event.target == getModalContainer || event.target == getModalImg || event.target == getModalToggle) {
+                fadeAnimation(getModalContainer, 'fadeOut', 'none', 300)
+            };
+        };
+    }
+
+    // Toggles Fade In & Out Animation
+    function fadeAnimation(target, type, display, timer) {
+        target.classList.add(type);
+        setTimeout( () => { 
+            target.classList.remove(type);
+            target.style.display = display;
+        }, timer);
+    }
+
 
     // Get's Current Time to Show Appropriate Greeting
     var greeting = document.querySelector('.primary-heading--sub');

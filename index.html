@@ -13,16 +13,18 @@
 <body>
 
     <!-- Image Modal -->
-    <div class="modal-box" id="modal-box" >
-        <div class="modal-box__toggle">
-            <div class="modal-box__toggle--background">
-                <i class="modal-box__toggle--icon fas fa-times" id="modal-toggle" aria-hidden="true"></i>
+    <div class="modal-container" id="modal-container">
+        <div class="modal-container__toggle">
+            <div class="modal-container__toggle--background">
+                <i class="modal-container__toggle--icon fas fa-times" id="modal-toggle" aria-hidden="true"></i>
             </div>
         </div>
-        <div class="modal-box__content">
-            <img src="media/conakry.jpg" class="modal-box__img" id="modal-img">
+
+        <div class="modal-container__content">
+            <img class="modal-container__img" id="modal-img">
         </div>
     </div>
+
 
     <!-- Navigation -->
     <div class="navigation">
@@ -60,8 +62,6 @@
             <i class="fas fa-bars navigation__toggle--icon" aria-hidden="true"></i>
         </div>
     </div>
-
-
 
     <!-- Header -->
     <header class="header" id="home">
@@ -125,7 +125,13 @@
 
     <!-- Quote Section -->
     <section class="quote-section">
+        
+        <div class="quote-box__background">
+                &nbsp;
+        </div>
+
         <div class="quote-box">
+
 
             <div class="quote-box__quotation">
                 <i class="fas fa-quote-left quote-box__quotation--left"></i>
@@ -203,8 +209,6 @@
 
         <!-- First Row -->
         <div class="gallery"></div>
-        <!-- <div class="clear"></div> -->
-
     </section>
 
     <!-- Contact Section -->
@@ -217,13 +221,9 @@
                     </h2>
                 </div>
                                 
-                <p class="contact-box__text">
-                    Follow me on any of the social media links below and send me a message!
-                </p>
-
+                <p class="contact-box__text">Follow me on any of the social media links below and send me a message!</p>
 
                 <div class="contact-box__social-media">
-                    
                     <ul class="contact-box__list">
                         <a href="https://www.facebook.com/boubacar.diallo.3760" target="_blank" class="contact-box__link">
                             <li class="contact-box__item">
@@ -243,7 +243,6 @@
                             </li>
                         </a>
 
-
                         <a href="mailto:boubacarpdiallo34@gmail.com" class="contact-box__link">
                             <li class="contact-box__item">
                                 <i class="fas fa-envelope"></i>
@@ -251,11 +250,10 @@
                         </a>
                     </ul>
                 </div>
-
             </div>
-
         </div>
     </section>
+
 
     <footer class="footer">
         <p class="footer__text">

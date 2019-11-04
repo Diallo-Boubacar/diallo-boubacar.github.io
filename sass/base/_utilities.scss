@@ -3,3 +3,22 @@
 .margin-top-medium { margin-top: 4rem; }
 .margin-bottom-small { margin-bottom: 2rem; }
 .margin-bottom-medium { margin-bottom: 4rem; }
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: .4s;
+    animation-timing-function: ease-in-out;
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: .4s;
+    animation-timing-function: ease-in-out;
+}
+
+.displayNavBackground {
+    opacity: 1 !important;
+    z-index: 1500 !important;
+}
+
+.displayNavList { left: 50% !important; }

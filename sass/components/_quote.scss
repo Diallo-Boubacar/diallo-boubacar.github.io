@@ -1,8 +1,14 @@
 .quote-box {
-    position: relative;
-    padding: 4rem 2rem;
+    // position: relative
+    // padding: 4rem 2rem;
     color: #fff;
     text-shadow: 0px 3px 10px rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
 
     &__quotation {
         font-size: 4rem;
@@ -10,7 +16,7 @@
         
         &--left {
             position: absolute;
-            top: 2rem;
+            top: -2rem;
             left: 15rem;
             @include respond(tablet-portrait) { left: 3rem; }
             @include respond(phone) { left: 2rem; }
@@ -18,7 +24,7 @@
 
         &--right {
             position: absolute;
-            top: 2rem;
+            top: -2rem;
             right: 15rem;
             @include respond(tablet-portrait) { right: 3rem; }
             @include respond(phone) { right: 2rem; }
